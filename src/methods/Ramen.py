@@ -67,8 +67,9 @@ class PriorityCache:
 
         topk = min(topk, self.size)
 
-        queries = queries.detach().to(device=self.device, dtype=self.dtype)
-        dist = torch.cdist(queries, self.keys[:self.size])  # torch.Tensor,
+        queries_float = queries.detach().to(device=self.device, dtype=torch.float32)
+        keys_float = self.keys[:self.size].detach().to(device=self.device, dtype=torch.float32)
+        dist = torch.cdist(queries_float, keys_float).to(self.dtype)  # torch.Tensor,
         sorted_dist, indices = torch.topk(dist, k=topk, dim=1, largest=False, sorted=True)
 
         values = self.values[indices]  # num_queries * topk * value_dim
