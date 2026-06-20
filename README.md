@@ -1,4 +1,6 @@
-<img width="1000" height="800" alt="스크린샷 2026-06-20 214456" src="https://github.com/user-attachments/assets/b794ba18-8988-409a-9351-b13ad1757b28" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b794ba18-8988-409a-9351-b13ad1757b28" width="1200">
+</p>
 
 
 # Ramen: Robust Test-Time Adaptation of Vision-Language Models with Active Sample Selection
